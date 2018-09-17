@@ -1,16 +1,16 @@
+import axios from 'axios'
+
 const actions = {
-  addUser({ commit }, payload) {
+  getProducts({ commit }) {
     return new Promise((resolve, reject) => {
-      commit('addUser', payload)
+      axios
+        .get('/api/product/list')
+        .then(({ data: { payload } }) => {
+          commit('addProducts', payload)
 
-      resolve(true)
-    })
-  },
-  addBook({ commit }, payload) {
-    return new Promise((resolve, reject) => {
-      commit('addBook', payload)
-
-      resolve(true)
+          resolve(true)
+        })
+        .catch(reject)
     })
   }
 }

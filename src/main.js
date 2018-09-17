@@ -10,6 +10,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import locale from 'element-ui/lib/locale/lang/en'
 
+import axios from 'axios'
 import './styles/index.css'
 
 Vue.use(ElementUI, { locale })
@@ -17,6 +18,8 @@ Vue.use(ElementUI, { locale })
 Vue.config.debug = !isProd()
 Vue.config.devtools = !isProd()
 Vue.config.productionTip = isProd()
+
+axios.defaults.baseURL = 'https://localhost:3443'
 
 function isProd() {
   return process.env.NODE_ENV === 'production'

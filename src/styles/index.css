@@ -130,3 +130,8 @@ p {
   margin-bottom: 10px;
   border-radius: 5px;
 }
+
+table {
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+    Microsoft YaHei, SimSun, sans-serif;
+}

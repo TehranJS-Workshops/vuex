@@ -7,17 +7,17 @@
           <h1>Vuex lib</h1>
         </div>
         <el-menu text-color="#c98dff" active-text-color="#FFF" :default-active="defaultActive">
-          <el-menu-item index="1" @click="handleRoute('/')">
+          <el-menu-item index="home" @click="handleRoute('/')">
             <i class="lnr lnr-home"></i>
             <span slot="title">Home</span>
           </el-menu-item>
-          <el-menu-item index="2" @click="handleRoute('/users')">
+          <el-menu-item index="users" @click="handleRoute('/users')">
             <i class="lnr lnr-users"></i>
             <span slot="title">Users</span>
           </el-menu-item>
-          <el-menu-item index="3" @click="handleRoute('/books')">
+          <el-menu-item index="products" @click="handleRoute('/products')">
             <i class="lnr lnr-book"></i>
-            <span slot="title">Books</span>
+            <span slot="title">Products</span>
           </el-menu-item>
         </el-menu>
       </el-aside>
@@ -44,8 +44,13 @@
 export default {
   name: 'Vuex',
   data: () => ({
-    defaultActive: '1'
+    defaultActive: 'home'
   }),
+  updated() {
+    const currentRoute = this.$router.history.current.name || 'home'
+
+    this.defaultActive = currentRoute.toLowerCase()
+  },
   methods: {
     handleRoute(path) {
       this.$router.push({ path })
