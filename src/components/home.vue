@@ -30,18 +30,4 @@ export default {
 </script>
 
 <style scoped>
-p {
-  line-height: 1.5;
-  font-size: 1.2em;
-}
-ul > li {
-  list-style-type: none;
-  font-size: 1.2em;
-  line-height: 1.8;
-  background: #f5ebff;
-  color: #9d4de7;
-  padding: 10px 20px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-}
 </style>

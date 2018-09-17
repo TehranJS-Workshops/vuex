@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import home from '@/components/home'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition
@@ -16,7 +16,17 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: home
+      component: () => import('@/components/home')
+    },
+    {
+      path: '/users',
+      name: 'Users',
+      component: () => import('@/components/users')
+    },
+    {
+      path: '/books',
+      name: 'Books',
+      component: () => import('@/components/books')
     }
   ]
 })
