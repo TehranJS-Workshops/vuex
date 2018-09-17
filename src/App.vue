@@ -30,7 +30,9 @@
 
         <el-row type="flex" justify="center">
           <el-col :span="22">
-            <router-view />
+            <transition name="fade" mode="out-in">
+              <router-view />
+            </transition>
           </el-col>
         </el-row>
       </el-container>
@@ -42,7 +44,7 @@
 export default {
   name: 'Vuex',
   data: () => ({
-    defaultActive: '2'
+    defaultActive: '1'
   }),
   methods: {
     handleRoute(path) {
