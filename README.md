@@ -1,10 +1,10 @@
-# tehranjs-vuex
+# Tehranjs vuex workshop
 
 > Application state with Vuex
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
